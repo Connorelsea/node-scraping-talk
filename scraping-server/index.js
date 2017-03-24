@@ -13,13 +13,18 @@ function scrapeCourses() {
       let courses = [];
 
       $(rows).each(function(i, element) {
-        courses.push({
-          dept: $(element).find(".course__dept").text(),
-          name: $(element).find(".course__name").text(),
-          num: $(element).find(".course__num").text(),
-          hours: $(element).find(".course__hours").text(),
-          inst: $(element).find(".course__inst").text()
+        let dept = $(element).find(".course__dept").text();
+        let name = $(element).find(".course__name").text();
+        let num = $(element).find(".course__num").text();
+        let hours = $(element).find(".course__hours").text();
+        let inst = [];
+
+        $(element).find(".course__inst").children().each(function(i, el) {
+          let inst_name = $(el).text();
+          inst.push(inst_name);
         });
+
+        courses.push({ dept, name, num, hours, inst });
       });
 
       console.log(courses.filter(course => course.num.startsWith("3")));
