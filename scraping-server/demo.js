@@ -12,6 +12,13 @@ app.use(bodyParser.json());
 function scrapeWebsite() {
   let website = "https://connorelsea.github.io/node-scraping-talk/college-website/";
 
+  request(website).then(html => {
+    let $ = cheerio.load(html);
+    let rows = $(".courses-table").find("tr");
+
+    console.log($(rows).length);
+  });
+
   // Do scraping here
 }
 
