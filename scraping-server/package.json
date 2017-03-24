@@ -16,6 +16,7 @@
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.12.8",
-    "osmosis": "1.0.2"
+    "osmosis": "1.0.2",
+    "request-promise": "^4.2.0"
   }
 }
