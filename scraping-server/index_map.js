@@ -20,9 +20,7 @@ app.get("/data/:text", (req, res) => {
   );
 });
 
-app.listen(4040, () => {
-  console.log("Listening on port 4040");
-});
+app.listen(4040);
 
 function scrapeCourses() {
   let website = "https://connorelsea.github.io/node-scraping-talk/college-website/";

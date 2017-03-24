@@ -17,8 +17,14 @@ class App extends Component {
     ).then(response => this.setState({ results: JSON.parse(response) }));
   }
 
-  renderCourse(course) {
-    return <p>{JSON.stringify(course)}</p>;
+  renderCourse({ dept, name, num, hours }) {
+    return (
+      <div className="course">
+        <h2>{dept} {num}</h2>
+        <h3>{name}</h3>
+        <p>Credit Hours {hours}</p>
+      </div>
+    );
   }
 
   render() {
